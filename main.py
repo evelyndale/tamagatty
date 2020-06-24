@@ -1,16 +1,16 @@
 import random
 import datetime
 
-pet_name = input("What is the name of your pet?")
-pet_color = input("What color is your pet?")
+pet_name = input("What is the name of your pet? ")
+pet_color = input("What color is your pet? ")
 
 # Virtual 'dice' to generate random events
-def random_event():
+def random_event(pet):
     dice_state = random.randrange(10)
     if(dice_state < 5):
-        print("Your dog was eaten by a slightly smaller dog")
+        print(f"Your {pet.species} was eaten by a slightly smaller {pet.species}")
     elif(dice_state >= 5 <= 10):
-        print("Your dog ate an eagle. Good job!")
+        print(f"Your {pet.species} ate an eagle. Good job!")
     else:
         print("Your dice are seriously busted, friend")
     return(dice_state)
@@ -34,5 +34,4 @@ def basic_pet_info():
 # Display the user's pet info after they make their pet
 basic_pet_info()
 
-random_event()
-
+random_event(pet_1)
